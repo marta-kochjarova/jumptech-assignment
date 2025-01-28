@@ -17,6 +17,16 @@ a {
   text-decoration: none;
   color: inherit;
 }
+button{
+     cursor: pointer;
+     outline: 0;
+     box-shadow: 0;
+     border: 0;
+     background-color: $primary-color;
+     color: white;
+     font-family: inherit;
+     font-size: inherit;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -74,10 +84,42 @@ main {
      }
     }
 }
+table{
+     width: 100%;
+     border-collapse: collapse;
+
+     thead{
+          background-color: $primary-color;
+          
+          th{
+               color: white;
+               text-align: left;
+               font-weight: 600;
+          }
+     }
+     tbody{
+          tr{
+               &:nth-child(even){
+                    background-color: $primary-color-lighter;
+               }
+          }
+          
+     }
+     td, th{
+          padding: 0.5rem;
+     }
+}
 .home-btn{
      position: absolute;
      right: 0;
      top: 0;
      transform: translateY(-100%);
      padding: 0.5rem;
+     text-transform: uppercase;
+}
+.add-new-btn{
+     display: inline;
+     float: right;
+     padding: 0.5rem;
+     text-transform: uppercase;
 }

@@ -7,9 +7,10 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+
   return (
     <div className="main-layout">
-      <Header username="user name" />
+      <Header />
       <main className="content">
         <div className="bg-white w-100 h-100 position-relative">
           <Link to="/" className="home-btn text-primary bg-white">GO HOME</Link>
