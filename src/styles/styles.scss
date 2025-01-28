@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+body {
+  font-size: $font-size-base;
+  background-color: $primary-color;
+}
+
+h1 {
+  color: $secondary-color;
+}

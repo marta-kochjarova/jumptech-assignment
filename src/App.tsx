@@ -1,12 +1,12 @@
 import React from 'react';
 import RoutesConfig from './routes';
+import Layout from './components/Layout';
 
 const App = () => {
   return (
-    <div>
-      <h1>Welcome to My App</h1>
+     <Layout>
       <RoutesConfig />
-    </div>
+    </Layout>
   );
 };
 
