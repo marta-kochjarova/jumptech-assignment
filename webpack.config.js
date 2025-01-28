@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -33,5 +34,6 @@ module.exports = {
       directory: path.join(__dirname, 'public'),
     },
     port: 3000,
+    historyApiFallback: true,
   },
 };
