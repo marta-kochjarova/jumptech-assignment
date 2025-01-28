@@ -6,9 +6,9 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ username }) => {
   return (
-     <header className="header">
-      <h2 className="app-title" style={{ display: 'inline' }}>Intranet </h2>
-      <div className="current-user" style={{ display: 'inline' }}>{username}</div>
+     <header className="header bg-white">
+      <span className="app-title">INTRANET</span>
+      <div className="current-user text-primary">{username}</div>
     </header>
   );
 };
