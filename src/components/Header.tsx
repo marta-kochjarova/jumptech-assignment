@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { User } from '../types/user';
+import { User } from '../types/User';
 import { getCurrentUser } from '../api/users';
 
 const Header: React.FC = () => {

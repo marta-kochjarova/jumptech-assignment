@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { currentUser } from "../utils/dummyData/currentUser";
 import { users } from "../utils/dummyData/users";
-import { User } from "../types/user";
+import { User } from "../types/User";
 
 export const getUsers = async (teamId: number | null) => {
   try {

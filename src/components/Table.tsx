@@ -1,16 +1,21 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface Column {
   name: string;
   displayName: string;
 }
 
-interface TableProps {
+interface TableProps<T extends Record<string, string | number | ReactNode>> {
   withAddNew: boolean;
   columns: Column[];
+  data: T[] | null;
 }
 
-const Table: React.FC<TableProps> = ({ withAddNew, columns }) => {
+const Table = <T extends Record<string, string | number | ReactNode>>({
+  withAddNew,
+  columns,
+  data,
+}: TableProps<T>) => {
   return (
     <>
       <div className="px-3 py-1">
@@ -24,36 +29,23 @@ const Table: React.FC<TableProps> = ({ withAddNew, columns }) => {
             </tr>
           </thead>
           <tbody>
+          {data ? (
+            data.map((row) => (
+              <tr>
+                {columns.map((column) => (
+                  <td>
+                    {row[column.name]}
+                  </td>
+                ))}
+              </tr>
+            ))
+          ) : (
             <tr>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
+              <td colSpan={columns.length} className="text-center">
+                No data found
+              </td>
             </tr>
-            <tr>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-            </tr>
-            <tr>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-              <td> aaa </td>
-            </tr>
+          )}
           </tbody>
         </table>
       </div>
