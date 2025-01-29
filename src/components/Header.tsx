@@ -20,7 +20,7 @@ const Header: React.FC = () => {
               : ""}
           </button>
           <div className="dropdown-menu">
-            <Link to="/login">Log out</Link>
+            <Link to="/">Log out</Link>
           </div>
         </div>
     </header>

@@ -2,8 +2,9 @@ import { User } from './User';
 
 export enum VacationState {
   PENDING = 'PENDING',
-  APPROVED_BY_MANAGER = 'APPROVED_BY_MANAGER',
+  APPROVED = 'APPROVED',
   REJECTED = 'REJECTED',
+  CANCELLED = 'CANCELLED',
 }
 
 export interface Vacation {

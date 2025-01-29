@@ -44,6 +44,7 @@ const Table = <T extends Record<string, string | number | ReactNode>>({ withAddN
           )}
           </tbody>
         </table>
+        {/* In case we wanted to actually use this app with real data, pagination would be implemented here. */}
       </div>
     </>
   );

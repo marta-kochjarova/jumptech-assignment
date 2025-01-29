@@ -6,7 +6,7 @@ import Vacations from './pages/Vacations';
 const RoutesConfig = () => {
   return (
      <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/vacations" element={<Vacations />} />
    </Routes>
   );

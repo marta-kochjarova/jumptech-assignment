@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const Login: React.FC = () => {
   return (
     <>
-      <div className="d-flex h-100 justify-center align-center">
+      <div className="d-flex h-100 flex-column justify-center align-center">
+        <h1 className="text-primary fw-lighter mb-2">Vacation manager</h1>
         <div className="login-box p-2">
         <form action="">
               <div className="form-group">

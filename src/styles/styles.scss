@@ -91,6 +91,7 @@ main {
 table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 
   thead {
     background-color: $primary-color;
