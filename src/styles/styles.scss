@@ -20,7 +20,7 @@ a {
 button {
   cursor: pointer;
   outline: 0;
-  box-shadow: 0;
+  box-shadow: none;
   border: 0;
   background-color: $primary-color;
   color: white;
@@ -169,12 +169,12 @@ form{
                margin-bottom: 0.5rem;
                font-size: 0.8rem;
           }
-          input{
+          input, select{
                border-radius: 0;
                border: 1px solid #d7d7d7;
                padding: 8px 12px;
                font-family: Montserrat;
-               width: 300px;
+               min-width: 300px;
 
                &:focus{
                     outline: none;
@@ -183,6 +183,15 @@ form{
                &::placeholder{
                     font-family: Montserrat;
                }
+          }
+     }
+     &.d-flex{
+          input, select{
+               min-width: 180px;
+               margin: 0 10px;
+          }
+          button{
+               height: 36px;
           }
      }
 }

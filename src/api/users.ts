@@ -3,23 +3,15 @@ import { currentUser } from "../utils/dummyData/currentUser";
 import { users } from "../utils/dummyData/users";
 import { User } from "../types/User";
 
-export const getUsers = async (teamId: number | null) => {
+export const getUsers = async (teamId: number | null, setUsers: Dispatch<SetStateAction<User[]>>) => {
   try {
     if (teamId === null) {
-      return users;
+      setUsers(users);
     } else {
-      return users.filter((user) => user.teams.includes(teamId));
+      setUsers(users.filter((user) => user.teams.includes(teamId)));
     }
   } catch (error) {
     console.error("Error fetching users:", error);
-  }
-};
-
-export const getUserById = async (userId: number) => {
-  try {
-    return users.find((user) => user.id === userId);
-  } catch (error) {
-    console.error("Error fetching user:", error);
   }
 };
 

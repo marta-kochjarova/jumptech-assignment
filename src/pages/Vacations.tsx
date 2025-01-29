@@ -3,23 +3,23 @@ import PageTitle from '../components/PageTitle';
 import PageFilters from '../components/PageFilters';
 import Table from '../components/Table';
 import { vacationTableColumns } from '../utils/vacationTableColumns';
-import { getVacations } from '../api/vacations';
+import { getVacationsByUser } from '../api/vacations';
 import { User } from '../types/User';
 import { Vacation } from '../types/Vacation';
 import { vacationsTableMapper } from '../utils/tableMappers';
 
 const Vacations: React.FC = () => {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
-  const [vacations, setVacations] = useState<Vacation[]>([]);
+  const [vacations, setVacations] = useState<Vacation[] | null>([]);
 
   useEffect(() => {
-    getVacations(null, setVacations);    
-  }, []);
+    getVacationsByUser(selectedUser?.id || null, setVacations);    
+  }, [selectedUser]);
 
   return (
     <>
       <PageTitle title="Vacation" />
-      <PageFilters setSelectedUser={setSelectedUser}/>
+      <PageFilters selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
       <Table withAddNew={true} columns={vacationTableColumns} data={vacationsTableMapper(vacations)}/>
     </>
   )

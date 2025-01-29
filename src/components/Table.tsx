@@ -11,14 +11,10 @@ interface TableProps<T extends Record<string, string | number | ReactNode>> {
   data: T[] | null;
 }
 
-const Table = <T extends Record<string, string | number | ReactNode>>({
-  withAddNew,
-  columns,
-  data,
-}: TableProps<T>) => {
+const Table = <T extends Record<string, string | number | ReactNode>>({ withAddNew, columns, data }: TableProps<T>) => {
   return (
     <>
-      <div className="px-3 py-1">
+      <div className="px-3 pb-1">
         {withAddNew && <button className="add-new-btn mb-05">add new</button>}
         <table className="">
           <thead>
@@ -41,8 +37,8 @@ const Table = <T extends Record<string, string | number | ReactNode>>({
             ))
           ) : (
             <tr>
-              <td colSpan={columns.length} className="text-center">
-                No data found
+              <td colSpan={columns.length} className="text-center py-3">
+                No data available for this selection.
               </td>
             </tr>
           )}

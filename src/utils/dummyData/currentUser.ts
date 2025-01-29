@@ -1,4 +1,6 @@
-export const currentUser =  {
+import { User } from "../../types/User";
+
+export const currentUser: User =  {
      id: 1,
      firstName: 'Meno',
      lastName: 'Priezvisko',
