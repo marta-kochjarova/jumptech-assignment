@@ -18,6 +18,18 @@
 .text-primary{
      color: $primary-color;
 }
+.text-center{
+     text-align: center;
+}
+.text-left{
+     text-align: left;
+}
+.text-right{
+     text-align: right;
+}
+.d-block{
+     display: block;
+}
 .d-flex{
      display:flex;
 }
@@ -35,6 +47,12 @@
 }
 .fw-bold{
      font-weight: 600;
+}
+.justify-center{
+     justify-content: center;
+}
+.align-center{
+     align-items: center;
 }
 
 /* Padding */

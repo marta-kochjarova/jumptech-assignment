@@ -17,15 +17,15 @@ a {
   text-decoration: none;
   color: inherit;
 }
-button{
-     cursor: pointer;
-     outline: 0;
-     box-shadow: 0;
-     border: 0;
-     background-color: $primary-color;
-     color: white;
-     font-family: inherit;
-     font-size: inherit;
+button {
+  cursor: pointer;
+  outline: 0;
+  box-shadow: 0;
+  border: 0;
+  background-color: $primary-color;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
 }
 img {
   max-width: 100%;
@@ -51,7 +51,11 @@ main {
   align-items: center;
   padding: 4rem 3rem 0 3rem;
   background-color: hsla(0, 100%, 50%, 1);
-  background-image: radial-gradient(at 40% 20%, hsla(10, 46%, 55%, 1) 0px, transparent 50%),
+  background-image: radial-gradient(
+      at 40% 20%,
+      hsla(10, 46%, 55%, 1) 0px,
+      transparent 50%
+    ),
     radial-gradient(at 80% 0%, hsla(189, 51%, 43%, 1) 0px, transparent 50%),
     radial-gradient(at 0% 50%, hsla(289, 40%, 36%, 1) 0px, transparent 50%),
     radial-gradient(at 80% 50%, hsla(340, 39%, 37%, 1) 0px, transparent 50%),
@@ -59,67 +63,144 @@ main {
     radial-gradient(at 80% 100%, hsla(240, 50%, 38%, 1) 0px, transparent 50%),
     radial-gradient(at 0% 0%, hsla(28, 76%, 67%, 1) 0px, transparent 50%);
 
-    .page-title{
-     display: block;
-     position: relative;
-     width: fit-content;
-     margin-left: -20px;
-     padding: 0.4rem 1rem 0.25rem 4rem;
+  .page-title {
+    display: block;
+    position: relative;
+    width: fit-content;
+    margin-left: -20px;
+    padding: 0.4rem 1rem 0.25rem 4rem;
 
-     &:after{
-          display: block;
-          position: absolute;
-          content: "";
-          width: 0;
-          height: 0;
-          left: 0;
-          bottom: -20px;
-          border-top: 20px solid $primary-color-darker;
-          border-left: 20px solid transparent;
-          z-index: 0;
-     }
-     h1{
-          font-weight: 500;
-          font-size: 1.75rem;
-     }
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      left: 0;
+      bottom: -20px;
+      border-top: 20px solid $primary-color-darker;
+      border-left: 20px solid transparent;
+      z-index: 0;
     }
+    h1 {
+      font-weight: 500;
+      font-size: 1.75rem;
+    }
+  }
 }
-table{
-     width: 100%;
-     border-collapse: collapse;
+table {
+  width: 100%;
+  border-collapse: collapse;
 
-     thead{
-          background-color: $primary-color;
-          
-          th{
-               color: white;
-               text-align: left;
-               font-weight: 600;
+  thead {
+    background-color: $primary-color;
+
+    th {
+      color: white;
+      text-align: left;
+      font-weight: 600;
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: $primary-color-lighter;
+      }
+    }
+  }
+  td,
+  th {
+    padding: 0.5rem;
+
+    button{
+     background-color: transparent;
+     color: $primary-color;
+     text-decoration: underline;
+    }
+  }
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .dropdown-button {
+    background-color: transparent;
+    color: $primary-color;
+    font-weight: 500;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+
+    &:after {
+      color: $primary-color;
+      content: " ▼";
+      font-size: 14px;
+    }
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    a {
+      display: block;
+      padding: 10px;
+      text-align: center;
+      font-weight: 400;
+
+      &:hover {
+          font-weight: 500;
+        background-color: $primary-color-lighter;
+      }
+    }
+  }
+  &:hover .dropdown-menu {
+    display: block;
+  }
+}
+form{
+     .form-group{
+          margin-bottom: 1rem;
+
+          label{
+               margin-bottom: 0.5rem;
+               font-size: 0.8rem;
           }
-     }
-     tbody{
-          tr{
-               &:nth-child(even){
-                    background-color: $primary-color-lighter;
+          input{
+               border-radius: 0;
+               border: 1px solid #d7d7d7;
+               padding: 8px 12px;
+               font-family: Montserrat;
+               width: 300px;
+
+               &:focus{
+                    outline: none;
+                    border-color: $primary-color;
+               }
+               &::placeholder{
+                    font-family: Montserrat;
                }
           }
-          
-     }
-     td, th{
-          padding: 0.5rem;
      }
 }
-.home-btn{
-     position: absolute;
-     right: 0;
-     top: 0;
-     transform: translateY(-100%);
-     padding: 0.5rem;
-     text-transform: uppercase;
+
+.home-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  padding: 0.5rem;
+  text-transform: uppercase;
 }
-.add-new-btn{
-     display: inline;
-     float: right;
-     padding: 0.5rem;
-     text-transform: uppercase;
+.add-new-btn {
+  display: inline;
+  float: right;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+.login-box{
+     border: 1px solid $primary-color;
 }
